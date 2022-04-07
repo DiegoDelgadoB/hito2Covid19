@@ -13,6 +13,109 @@
 
 <body>
 
+    <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Covid 19</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./situacionchile.html" style="display:none;" id="link_chile">Situación
+                            Chile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin"
+                            id="link_login">Iniciar sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="display:none;" id="link_logout">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Tabla con datos de los paises -->
+    <main class="container mt-5">
+        <section id="grafico" class="py-5">
+            <!--DIV DONDE SE INYECTA GRAFICO PARA SITUACIÓN MUNDIAL-->
+            <div id="graficoCovidMundial" style="height: 370px; width: 100%;"></div>
+
+        </section>
+        <section id="tabla-datos">
+            <hr>
+            <h2 class="text-center py-3">
+                Tabla de casos COVID 19 a nivel mundial.
+            </h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">País</th>
+                        <th scope="col">Confirmados</th>
+                        <th scope="col">Fallecidos</th>
+                        <th scope="col">Detalles</th>
+
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla">
+
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detalle Casos de covid</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cuerpoModal">
+                    <!--DIV DONDE SE INYECTA GRAFICO POR PAÍS-->
+                    <div id="graficoDetalle" style="height: 370px; width: 100%;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login de usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formulario_login">
+                        <label for="text-email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="text-email">
+                        <label for="text-password" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="text-password">
+                        <button type="button" class="btn btn-primary mt-3" id="boton_login">Enviar</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!--JS DE BOOSTRAP-->
